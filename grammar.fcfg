@@ -1,11 +1,4 @@
-## From NLTK
-##
-## Minimal feature-based grammar to illustrate the interpretation of
-## determiner phrases.
-## 
-## Author: Ewan Klein <ewan@inf.ed.ac.uk> 
-## URL: <http://nltk.sourceforge.net>
-## For license information, see LICENSE.TXT
+## Author: Haotian He <haotianh@uw.edu> 
 
 % start S
 

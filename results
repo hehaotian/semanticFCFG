@@ -1,0 +1,11 @@
+(S[SEM=<exists x.(dog(x) & bark(x))>]
+  (NP[SEM=<\P.exists x.(dog(x) & P(x))>]
+    (Det[SEM=<\Q P.exists x.(Q(x) & P(x))>] a)
+    (N[SEM=<\x.dog(x)>] dog))
+  (VP[SEM=<\x.bark(x)>] (IV[SEM=<\x.bark(x)>] barks)))
+(S[SEM=<all x.(dog(x) -> bark(x))>]
+  (NP[SEM=<\P.all x.(dog(x) -> P(x))>]
+    (Det[SEM=<\Q P.all x.(Q(x) -> P(x))>] every)
+    (N[SEM=<\x.dog(x)>] dog))
+  (VP[SEM=<\x.bark(x)>] (IV[SEM=<\x.bark(x)>] barks)))
+
