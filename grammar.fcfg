@@ -1,14 +1,29 @@
 ## Author: Haotian He <haotianh@uw.edu> 
 
 % start S
+############################
+# Grammar Rules
+############################
 
-S[SEM = <?subj(?vp)>] -> NP[SEM=?subj] VP[SEM=?vp]
-VP[SEM=?v] -> IV[SEM=?v]
-NP[SEM=<?det(?n)>] -> Det[SEM=?det] N[SEM=?n]
-NP[SEM=<?pn>] -> PN[SEM=?pn]
+S[SEM = <?subj(?vp)>] -> NP[NUM=?n,SEM=?subj] VP[NUM=?N,SEM=?vp]
 
-Det[SEM=<\Q P.exists x.(Q(x) & P(x))>] -> 'a'
-Det[SEM=<\Q P.all x.(Q(x) -> P(x))>] -> 'every'
-N[SEM=<\x.student(x)>] -> 'student'
-PN[SEM=<\x.name(x)>] -> 'John'
-IV[SEM=<\x.eat(x)>] -> 'eats'
+NP[NUM=?n,SEM=<?det(?nom)>] -> Det[NUM=?n,SEM=?det] Nom[NUM=?n,SEM=?nom]
+NP[LOC=?l,NUM=?n,SEM=?np] -> PropN[LOC=?l,NUM=?n,SEM=?np]
+
+NOM[NUM=?n,SEM=?nom] -> N[NUM=?n,SEM=?nom]
+
+VP[NUM=?n,SEM=?v] -> IV[NUM=?n,SEM=?v]
+
+############################
+# Lexical Rules
+############################
+
+PropN[-LOC,NUM=sg,SEM=<\P.P(John)>] -> 'John'
+
+Det[SEM=<\P Q.exists x.(P(x) & Q(x))>] -> 'a'
+Det[SEM=<\P Q.all x.(P(x) -> Q(x))>] -> 'every'
+Det[SEM=<\P Q.all x.(P(x) -> Q(x))>] -> 'all'
+
+N[NUM=sg,SEM=<\x.student(x)>] -> 'student'
+
+IV[NUM=sg,SEM=<\x.eat(x)>,TNS=pres] -> 'eats'
