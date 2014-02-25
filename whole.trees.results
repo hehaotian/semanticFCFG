@@ -1,0 +1,161 @@
+(S[SEM=<eat(John)>]
+  (NP[-LOC, NUM='sg', SEM=<\P.P(John)>]
+    (PropN[-LOC, NUM='sg', SEM=<\P.P(John)>] John))
+  (VP[NUM='sg', SEM=<\x.eat(x)>]
+    (IV[NUM='sg', SEM=<\x.eat(x)>, TNS='pres'] eats)))
+(S[SEM=<exists x.(student(x) & eat(x))>]
+  (NP[NUM='sg', SEM=<\Q.exists x.(student(x) & Q(x))>]
+    (Det[NUM='sg', SEM=<\P Q.exists x.(P(x) & Q(x))>] a)
+    (Nom[NUM='sg', SEM=<\x.student(x)>]
+      (N[NUM='sg', SEM=<\x.student(x)>] student)))
+  (VP[NUM='sg', SEM=<\x.eat(x)>]
+    (IV[NUM='sg', SEM=<\x.eat(x)>, TNS='pres'] eats)))
+(S[SEM=<all x.(student(x) -> eat(x))>]
+  (NP[NUM='pl', SEM=<\Q.all x.(student(x) -> Q(x))>]
+    (Det[NUM='pl', SEM=<\P Q.all x.(P(x) -> Q(x))>] all)
+    (Nom[NUM='pl', SEM=<\x.student(x)>]
+      (N[NUM='pl', SEM=<\x.student(x)>] students)))
+  (VP[NUM='pl', SEM=<\x.eat(x)>]
+    (IV[NUM='pl', SEM=<\x.eat(x)>, TNS='pres'] eat)))
+(S[SEM=<exists z1.(sandwich(z1) & eat(John,z1))>]
+  (NP[-LOC, NUM='sg', SEM=<\P.P(John)>]
+    (PropN[-LOC, NUM='sg', SEM=<\P.P(John)>] John))
+  (VP[NUM='sg', SEM=<\x.exists z1.(sandwich(z1) & eat(x,z1))>]
+    (TV[NUM='sg', SEM=<\X x.X(\y.eat(x,y))>, TNS='pres'] eats)
+    (NP[NUM='sg', SEM=<\Q.exists x.(sandwich(x) & Q(x))>]
+      (Det[NUM='sg', SEM=<\P Q.exists x.(P(x) & Q(x))>] a)
+      (Nom[NUM='sg', SEM=<\x.sandwich(x)>]
+        (N[NUM='sg', SEM=<\x.sandwich(x)>] sandwich)))))
+(S[SEM=<all x.(student(x) -> eat(\y.conj(\x.drink(x),y),x))>]
+  (NP[NUM='pl', SEM=<\Q.all x.(student(x) -> Q(x))>]
+    (Det[NUM='pl', SEM=<\P Q.all x.(P(x) -> Q(x))>] all)
+    (Nom[NUM='pl', SEM=<\x.student(x)>]
+      (N[NUM='pl', SEM=<\x.student(x)>] students)))
+  (VP[NUM='pl', SEM=<eat(\y.conj(\x.drink(x),y))>]
+    (IV[NUM='pl', SEM=<\x.eat(x)>, TNS='pres'] eat)
+    (CONJ[SEM=<\X x.X(\y.conj(x,y))>] or)
+    (IV[NUM='pl', SEM=<\x.drink(x)>, TNS='pres'] drink)))
+(S[SEM=<exists z5.(soda(z5) & drink(\y.conj(\x.exists z6.(sandwich(z6) & eat(x,z6)),y),z5))(John)>]
+  (NP[-LOC, NUM='sg', SEM=<\P.P(John)>]
+    (PropN[-LOC, NUM='sg', SEM=<\P.P(John)>] John))
+  (VP[NUM='sg', SEM=<exists z5.(soda(z5) & drink(\y.conj(\x.exists z6.(sandwich(z6) & eat(x,z6)),y),z5))>]
+    (TV[NUM='sg', SEM=<\X x.X(\y.drink(x,y))>, TNS='pres'] drinks)
+    (NP[NUM='sg', SEM=<\Q.exists x.(soda(x) & Q(x))>]
+      (Det[NUM='sg', SEM=<\P Q.exists x.(P(x) & Q(x))>] a)
+      (Nom[NUM='sg', SEM=<\x.soda(x)>]
+        (N[NUM='sg', SEM=<\x.soda(x)>] soda)))
+    (CONJ[SEM=<\X x.X(\y.conj(x,y))>] or)
+    (TV[NUM='sg', SEM=<\X x.X(\y.eat(x,y))>, TNS='pres'] eats)
+    (NP[NUM='sg', SEM=<\Q.exists x.(sandwich(x) & Q(x))>]
+      (Det[NUM='sg', SEM=<\P Q.exists x.(P(x) & Q(x))>] a)
+      (Nom[NUM='sg', SEM=<\x.sandwich(x)>]
+        (N[NUM='sg', SEM=<\x.sandwich(x)>] sandwich)))))
+(S[SEM=<conj(\P.P(Mary),John,\x.eat(x))>]
+  (NP[-LOC, NUM='sg', SEM=<conj(\P.P(Mary),John)>]
+    (PropN[-LOC, NUM='sg', SEM=<\P.P(John)>] John)
+    (CONJ[SEM=<\X x.X(\y.conj(x,y))>] or)
+    (PropN[-LOC, NUM='sg', SEM=<\P.P(Mary)>] Mary))
+  (VP[NUM='sg', SEM=<\x.eat(x)>]
+    (IV[NUM='sg', SEM=<\x.eat(x)>, TNS='pres'] eats)))
+(S[SEM=<exists x.(student(x) & exists z8.(essay(z8) & write(\y.conj(eat(?obj3),y),z8))(x))>]
+  (NP[NUM='sg', SEM=<\Q.exists x.(student(x) & Q(x))>]
+    (Det[NUM='sg', SEM=<\P Q.exists x.(P(x) & Q(x))>] a)
+    (Nom[NUM='sg', SEM=<\x.student(x)>]
+      (N[NUM='sg', SEM=<\x.student(x)>] student)))
+  (VP[NUM='sg', SEM=<exists z8.(essay(z8) & write(\y.conj(eat(?obj2),y),z8))>]
+    (TV[NUM='sg', SEM=<\X x.X(\y.write(x,y))>, TNS='pres'] writes)
+    (NP[NUM='sg', SEM=<\Q.exists x.(essay(x) & Q(x))>]
+      (Det[NUM='sg', SEM=<\P Q.exists x.(P(x) & Q(x))>] an)
+      (Nom[NUM='sg', SEM=<\x.essay(x)>]
+        (N[NUM='sg', SEM=<\x.essay(x)>] essay)))
+    (CONJ[SEM=<\X x.X(\y.conj(x,y))>] or)
+    (IV[NUM='sg', SEM=<\x.eat(x)>, TNS='pres'] eats)))
+(S[SEM=<all x.(student(x) -> exists z11.(sandwich(z11) & eat(\y.conj(\x.exists z12.(soda(z12) & drink(x,z12)),y),z11))(x))>]
+  (NP[NUM='sg', SEM=<\Q.all x.(student(x) -> Q(x))>]
+    (Det[NUM='sg', SEM=<\P Q.all x.(P(x) -> Q(x))>] every)
+    (Nom[NUM='sg', SEM=<\x.student(x)>]
+      (N[NUM='sg', SEM=<\x.student(x)>] student)))
+  (VP[NUM='sg', SEM=<exists z11.(sandwich(z11) & eat(\y.conj(\x.exists z12.(soda(z12) & drink(x,z12)),y),z11))>]
+    (TV[NUM='sg', SEM=<\X x.X(\y.eat(x,y))>, TNS='pres'] eats)
+    (NP[NUM='sg', SEM=<\Q.exists x.(sandwich(x) & Q(x))>]
+      (Det[NUM='sg', SEM=<\P Q.exists x.(P(x) & Q(x))>] a)
+      (Nom[NUM='sg', SEM=<\x.sandwich(x)>]
+        (N[NUM='sg', SEM=<\x.sandwich(x)>] sandwich)))
+    (CONJ[SEM=<\X x.X(\y.conj(x,y))>] or)
+    (TV[NUM='sg', SEM=<\X x.X(\y.drink(x,y))>, TNS='pres'] drinks)
+    (NP[NUM='sg', SEM=<\Q.exists x.(soda(x) & Q(x))>]
+      (Det[NUM='sg', SEM=<\P Q.exists x.(P(x) & Q(x))>] a)
+      (Nom[NUM='sg', SEM=<\x.soda(x)>]
+        (N[NUM='sg', SEM=<\x.soda(x)>] soda)))))
+(S[SEM=<all z13.(sandwich(z13) -> eat(John,z13))>]
+  (NP[-LOC, NUM='sg', SEM=<\P.P(John)>]
+    (PropN[-LOC, NUM='sg', SEM=<\P.P(John)>] John))
+  (VP[NUM='sg', SEM=<\x.all z13.(sandwich(z13) -> eat(x,z13))>]
+    (TV[NUM='sg', SEM=<\X x.X(\y.eat(x,y))>, TNS='pres'] eats)
+    (NP[NUM='sg', SEM=<\Q.all x.(sandwich(x) -> Q(x))>]
+      (Det[NUM='sg', SEM=<\P Q.all x.(P(x) -> Q(x))>] every)
+      (Nom[NUM='sg', SEM=<\x.sandwich(x)>]
+        (N[NUM='sg', SEM=<\x.sandwich(x)>] sandwich)))))
+(S[SEM=<all z15.(sandwich(\y.conj(\z15.bagel(z15),y),z15) -> eat(John,z15))>]
+  (NP[-LOC, NUM='sg', SEM=<\P.P(John)>]
+    (PropN[-LOC, NUM='sg', SEM=<\P.P(John)>] John))
+  (VP[NUM='sg', SEM=<\x.all z15.(sandwich(\y.conj(\z15.bagel(z15),y),z15) -> eat(x,z15))>]
+    (TV[NUM='sg', SEM=<\X x.X(\y.eat(x,y))>, TNS='pres'] eats)
+    (NP[NUM='sg', SEM=<\Q.all x.(sandwich(\y.conj(\x.bagel(x),y),x) -> Q(x))>]
+      (Det[NUM='sg', SEM=<\P Q.all x.(P(x) -> Q(x))>] every)
+      (Nom[NUM='sg', SEM=<sandwich(\y.conj(\x.bagel(x),y))>]
+        (N[NUM='sg', SEM=<\x.sandwich(x)>] sandwich)
+        (CONJ[SEM=<\X x.X(\y.conj(x,y))>] or)
+        (N[NUM='sg', SEM=<\x.bagel(x)>] bagel)))))
+(S[SEM=<-exists x.(person(x) & exists z16.(bagel(z16) & eat(x,z16)))>]
+  (NP[-LOC, NUM='sg', SEM=<\Q.-exists x.(person(x) & Q(x))>]
+    (PropN[-LOC, NUM='sg', SEM=<\Q.-exists x.(person(x) & Q(x))>]
+      nobody))
+  (VP[NUM='sg', SEM=<\x.exists z16.(bagel(z16) & eat(x,z16))>]
+    (TV[NUM='sg', SEM=<\X x.X(\y.eat(x,y))>, TNS='pres'] eats)
+    (NP[NUM='sg', SEM=<\Q.exists x.(bagel(x) & Q(x))>]
+      (Det[NUM='sg', SEM=<\P Q.exists x.(P(x) & Q(x))>] a)
+      (Nom[NUM='sg', SEM=<\x.bagel(x)>]
+        (N[NUM='sg', SEM=<\x.bagel(x)>] bagel)))))
+(S[SEM=<exists x.(person(x) & -eat(x))>]
+  (NP[NUM='sg', SEM=<\Q.exists x.(person(x) & Q(x))>]
+    (Det[NUM='sg', SEM=<\P Q.exists x.(P(x) & Q(x))>] a)
+    (Nom[NUM='sg', SEM=<\x.person(x)>]
+      (N[NUM='sg', SEM=<\x.person(x)>] person)))
+  (VP[NUM='sg', SEM=<\x.-eat(x)>, +neg]
+    (AuxP[-COP, NUM='sg', SEM=<\P x.-P(x)>]
+      (Aux[-COP, NUM='sg', SEM=<\P x.P(x)>, tns='pres'] does)
+      (Neg[SEM=<\T P.T(\x.-P(x))>] not))
+    (VP[NUM='pl', SEM=<\x.eat(x)>]
+      (IV[NUM='pl', SEM=<\x.eat(x)>, TNS='pres'] eat))))
+(S[SEM=<-eat(\y.conj(\x.drink(x),y),Jack)>]
+  (NP[-LOC, NUM='sg', SEM=<\P.P(Jack)>]
+    (PropN[-LOC, NUM='sg', SEM=<\P.P(Jack)>] Jack))
+  (VP[NUM='sg', SEM=<\x.-eat(\y.conj(\x.drink(x),y),x)>, +neg]
+    (AuxP[-COP, NUM='sg', SEM=<\P x.-P(x)>]
+      (Aux[-COP, NUM='sg', SEM=<\P x.P(x)>, tns='pres'] does)
+      (Neg[SEM=<\T P.T(\x.-P(x))>] not))
+    (VP[NUM='pl', SEM=<eat(\y.conj(\x.drink(x),y))>]
+      (IV[NUM='pl', SEM=<\x.eat(x)>, TNS='pres'] eat)
+      (CONJ[SEM=<\X x.X(\y.conj(x,y))>] or)
+      (IV[NUM='pl', SEM=<\x.drink(x)>, TNS='pres'] drink))))
+(S[SEM=<-exists x.(student(x) & exists z17.(bagel(z17) & eat(x,z17)))>]
+  (NP[NUM='sg', SEM=<\Q.-exists x.(student(x) & Q(x))>]
+    (Det[NUM='sg', SEM=<\P Q.-exists x.(P(x) & Q(x))>] no)
+    (Nom[NUM='sg', SEM=<\x.student(x)>]
+      (N[NUM='sg', SEM=<\x.student(x)>] student)))
+  (VP[NUM='sg', SEM=<\x.exists z17.(bagel(z17) & eat(x,z17))>]
+    (TV[NUM='sg', SEM=<\X x.X(\y.eat(x,y))>, TNS='pres'] eats)
+    (NP[NUM='sg', SEM=<\Q.exists x.(bagel(x) & Q(x))>]
+      (Det[NUM='sg', SEM=<\P Q.exists x.(P(x) & Q(x))>] a)
+      (Nom[NUM='sg', SEM=<\x.bagel(x)>]
+        (N[NUM='sg', SEM=<\x.bagel(x)>] bagel)))))
+(S[SEM=<eat(John)>]
+  (NP[-LOC, NUM='sg', SEM=<\P.P(John)>]
+    (PropN[-LOC, NUM='sg', SEM=<\P.P(John)>] John))
+  (VP[NUM='sg', SEM=<\x.eat(x)>]
+    (IV[NUM='sg', SEM=<\x.eat(x)>, TNS='pres'] eats)
+    (PP[+LOC, SEM=<\x.in(x,Seattle)>]
+      (P[+LOC, SEM=<\X x.X(\y.in(x,y))>] in)
+      (NP[+LOC, NUM='sg', SEM=<\P.P(Seattle)>]
+        (PropN[+LOC, NUM='sg', SEM=<\P.P(Seattle)>] Seattle)))))

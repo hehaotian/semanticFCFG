@@ -41,7 +41,7 @@ if __name__ == "__main__":
         if (len(trees) == 0):
             print ""
         for tree in trees: # prints the parse trees
-            print tree
+            print tree.node['SEM'].simplify()
 #parsCount += 1 # counts the number of parses for the sentence
             
             #if parsCount == 1: # prints the number of parses under the tree
