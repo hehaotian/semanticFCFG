@@ -3,4 +3,4 @@
 # LING571 HW5
 # Haotian He
 
-python hw5.py $@
+python2.7 hw5.py $@
