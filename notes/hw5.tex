@@ -1,0 +1,46 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage{avm}
+\usepackage{extarrows}
+\usepackage{qtree}
+
+\title{Homework 5 for LING 571}
+\author{Haotian He}
+\date{February 23 2014}
+
+\begin{document}
+\maketitle
+\section{Representations in first-order logic}
+1. John eats \\
+$\exists x.John(x) \wedge eat(x)$ \\ \\
+2. a student eats \\
+$\exists x.student(x) \wedge eat(x)$ \\ \\
+3. all students eat \\
+$\forall x.student(x) \wedge eat(x)$ \\ \\
+4. John eats a sandwich \\
+$\exists x.John(x) \wedge \exists y.sandwich(y) \wedge eat(x,y)$ \\ \\
+5. all students eat or drink \\
+$\forall x.student(x) \wedge (eat(x) | drink(x))$ \\ \\
+6. John drinks a soda or eats a sandwich \\
+$\exists x.John(x) \wedge ((\exists y.soda(y) \wedge drink(x,y))|(\exists y.sandwich(y) \wedge eat(x,y)))$ \\ \\
+7. John or Mary eats \\
+$(\exists x.John(x) | \exists x.Mary(x)) \wedge eat(x)$ \\ \\
+8. a student writes an essay or eats \\
+$\exists x.student(x) \wedge (write(x,ESSAY) | eat(x))$ \\ \\
+9. every student eats a sandwich or drinks a soda \\
+$\forall x.student(x) \wedge \exists y.sandwich(y) \wedge \exists z.soda(z) \wedge (eat(x,y) | drink(x,z))$ \\ \\
+10. John eats every sandwich \\
+$\exists x.John(x) \wedge \forall y.sandwich(y) \wedge eat(x,y)$ \\ \\
+11. John eats every sandwich or bagel \\
+$\exists x.John(x) \wedge \forall y.sandwich(y) \wedge \forall z.bagel(z) \wedge eat(x,y) \wedge eat(x,z)$ \\ \\
+12. nobody eats a bagel \\
+$\neg (\forall x.person(x) \wedge \exists y.bagel(y) \wedge eat(x,y))$ \\ \\
+13. a person does not eat \\
+$\exists x.person(x) \wedge \neg (eat(x))$ \\ \\
+14. Jack does not eat or drink \\
+$(\exists x.Jack(x) \wedge \neg (eat(x) | drink(x)))$ \\ \\
+15. no student eats a bagel \\
+$\neg (\exists x.student(x) \wedge \exists y.bagel(y) \wedge eat(x, y))$ \\ \\
+16. John eats in Seattle \\
+$\exists x.John(x) \wedge eat(x) \wedge \exists y.Seattle(y) \wedge LocationOf(y)$
+\end{document}
