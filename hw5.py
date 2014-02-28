@@ -20,7 +20,7 @@ if __name__ == "__main__":
         sent_path = sys.argv[2]
     else:
         grammar_path = "grammar.fcfg"
-        sent_path = "sents.txt"
+        sent_path = "semantics_sentences.txt"
         
     grammar = nltk.data.load('file:' + grammar_path); # loads the grammar
     parser = nltk.parse.FeatureChartParser(grammar) # builds a parser for the grammar

@@ -11,6 +11,7 @@ S[SEM = <?subj(?vp)>] -> NP[NUM=?n,SEM=?subj] VP[NUM=?n,SEM=?vp]
 
 NP[NUM=?n,SEM=<?det(?nom)> ] -> Det[NUM=?n,SEM=?det]  Nom[NUM=?n,SEM=?nom]
 NP[LOC=?l,NUM=?n,SEM=?np] -> PropN[LOC=?l,NUM=?n,SEM=?np]
+
 NP[LOC=?l,NUM=?n,SEM=<?conj(?np1,?np2)>] -> PropN[LOC=?l,NUM=?n,SEM=?np1] CONJ[SEM=?conj] PropN[LOC=?l,NUM=?n,SEM=?np2]
 
 Nom[NUM=?n,SEM=?nom] -> N[NUM=?n,SEM=?nom]
@@ -28,16 +29,16 @@ AuxP[COP=?c,NUM=?n,SEM=<app(?neg,?aux)>] -> Aux[COP=?c,NUM=?n,SEM=?aux] Neg[SEM=
 
 VP[NUM=?n,SEM=?v] -> IV[NUM=?n,SEM=?v] PP
 
-PP[LOC=?l,SEM=<app(?p,?np)>] -> P[LOC=?l,SEM=?p] NP[LOC=?l,SEM=?np]
+PP[SEM=<?p(?np)>] -> P[SEM=?p] NP[SEM=?np]
 
 ############################
 # Lexical Rules
 ############################
 
-PropN[-LOC,NUM=sg,SEM=<\P.P(John)>] -> 'John'
-PropN[-LOC,NUM=sg,SEM=<\P.P(Mary)>] -> 'Mary'
-PropN[-LOC,NUM=sg,SEM=<\P.P(Jack)>] -> 'Jack'
-PropN[+LOC,NUM=sg,SEM=<\P.P(Seattle)>] -> 'Seattle'
+PropN[-LOC,NUM=sg,SEM=<\P.P(JOHN)>] -> 'John'
+PropN[-LOC,NUM=sg,SEM=<\P.P(MARY)>] -> 'Mary'
+PropN[-LOC,NUM=sg,SEM=<\P.P(JACK)>] -> 'Jack'
+PropN[+LOC,NUM=sg,SEM=<\P.P(SEATTLE)>] -> 'Seattle'
 PropN[-LOC,NUM=sg,SEM=<\Q. (- exists x.(person(x) & Q(x)))>] -> 'nobody'
 
 Det[NUM=sg,SEM=<\P Q.all x.(P(x) -> Q(x))>] -> 'every'
@@ -55,13 +56,13 @@ N[NUM=sg,SEM=<\x.essay(x)>] -> 'essay'
 N[NUM=sg,SEM=<\x.bagel(x)>] -> 'bagel'
 N[NUM=sg,SEM=<\x.person(x)>] -> 'person'
 
-CONJ[SEM=<\X x.X(\y.conj(x,y))>] -> 'or'
+CONJ[SEM=<\X Y.(\S. (X(S) | Y(S)))>] -> 'or'
 
 Aux[-COP,NUM=sg,SEM=<\P x.P(x)>,tns=pres] -> 'does'
 
 Neg[SEM=<\T P.T(\x.(- P(x)))>] -> 'not'
 
-P[+LOC,SEM=<\X x.X(\y.in(x,y))>] -> 'in'
+P[sem=<\K P y. K(\x. (in(y,x) & P (y) ))>] -> 'in'
 
 IV[NUM=sg,SEM=<\x.eat(x)>,TNS=pres] -> 'eats'
 IV[NUM=pl,SEM=<\x.eat(x)>,TNS=pres] -> 'eat'

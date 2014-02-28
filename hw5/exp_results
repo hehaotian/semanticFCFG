@@ -1,3 +1,0 @@
-exists x.(dog(x) & bark(x))
-all x.(dog(x) -> bark(x))
-
