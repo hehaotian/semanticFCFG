@@ -1,0 +1,32 @@
+## Author: Haotian He <haotianh@uw.edu> 
+## Created by Feb. 20, 2014
+## LING571-HW5
+
+John eats
+exists x.(John(x) & exists z2.(eat(z2) & eater(z2,x)))
+
+a student eats
+exists x.(student(x) -> exists z3.(eat(z3) & eater(z3,x)))
+
+all students eat
+all x.(student(x) -> exists z3.(eat(z3) & eater(z3,x)))
+
+John eats a sandwich
+exists x.(John(x) -> exists y.(sandwich(y) & exists z4.(eat(z4) & eater(z4,x))))
+
+all students eat or drink
+all x.(student(x) -> exists y.(\x.(eat(x) & drink(x))))
+
+John drinks a soda or eats a sandwich
+exists x.(John(x) -> exists y.(\x.()))
+
+John or Mary eats
+a student writes an essay or eats
+every student eats a sandwich or drinks a soda
+John eats every sandwich 
+John eats every sandwich or bagel
+nobody eats a bagel
+a person does not eat
+Jack does not eat or drink 
+no student eats a bagel
+John eats in Seattle
